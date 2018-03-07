@@ -28,7 +28,7 @@ describe('Recipes', function() {
 
       });
 
-      it('should add recipes on POST', function() {
+      it('should add a recipe on POST', function() {
 
             const newRecipe = { 
 
@@ -60,22 +60,24 @@ describe('Recipes', function() {
 
             };
 
-            return chai.request(app)
-            .get('/recipes')
-            .then(function(res) {
+            return 
+                chai
+                  .request(app)
+                  .get('/recipes')
+                  .then(function(res) {
 
-                  updateItem.id = res.body[0].id;
-                  return chai.request(app)
-                  .put(`/recipes/${updateItem.id}`)
-                  .send(updateItem);
+                        updateItem.id = res.body[0].id;
+                        return 
+                            chai
+                              .request(app)
+                              .put(`/recipes/${updateItem.id}`)
+                              .send(updateItem);
 
             })
             .then(function(res) {
 
-                expect(res).to.have.status(200);
+                expect(res).to.have.status(204);
                 expect(res).to.be.json;
-                expect(res.body).to.deep.equal(updateItem);
-
 
             });
 
