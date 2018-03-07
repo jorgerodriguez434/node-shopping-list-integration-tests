@@ -109,7 +109,7 @@ describe('Shopping List', function() {
         // object, which we can inspect in the next `then` block. Note
         // that we could have used a nested callback here instead of
         // returning a promise and chaining with `then`, but we find
-        // this approach cleaner and easier to read and reason about.
+        // this approach cleaneer and easier to read and reason about.
         return chai.request(app)
           .put(`/shopping-list/${updateData.id}`)
           .send(updateData);

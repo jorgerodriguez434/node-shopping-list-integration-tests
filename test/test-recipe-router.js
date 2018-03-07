@@ -11,12 +11,12 @@ describe('Recipes', function() {
             return runServer();
       });
 
-
       after(function() {
           return closeServer();
       });
 
       it('should list recipes on GET', function() {
+
             return chai.request(app)
             .get('/recipes')
             .then(function(res) {
@@ -26,11 +26,17 @@ describe('Recipes', function() {
   
             });
 
-
       });
 
       it('should add recipes on POST', function() {
-            const newRecipe = { name: 'foo', ingredients: ['buzz', 'fizz']};            
+
+            const newRecipe = { 
+
+                        name: 'foo', 
+                        ingredients: ['buzz', 'fizz']
+
+            };            
+
             return chai.request(app)
             .post('/recipes')
             .send(newRecipe)
@@ -46,10 +52,13 @@ describe('Recipes', function() {
       }); 
 
        it('should update recipes on PUT', function() {
-            const updateItem = {
-                        name: 'foo',
-                        ingredients: ['bizz', 'bang']
-              };
+
+            const updateItem = { 
+
+                    name: 'foo',
+                    ingredients: ['bizz', 'bang']
+
+            };
 
             return chai.request(app)
             .get('/recipes')
@@ -70,9 +79,7 @@ describe('Recipes', function() {
 
             });
 
-
       }); 
-
 
 
 });
