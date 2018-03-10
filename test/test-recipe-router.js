@@ -73,15 +73,15 @@ describe('Recipes', function() {
                               .put(`/recipes/${updateItem.id}`)
                               .send(updateItem);
 
-            })
-            .then(function(res) {
+                  })
+                  .then(function(res) {
 
-                expect(res).to.have.status(204);
-                expect(res).to.be.json;
+                              expect(res).to.have.status(204);
+                              expect(res).to.be.json;
 
-            });
+                   });
 
-      }); 
+           }); 
 
 
 });
